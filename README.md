@@ -1,4 +1,4 @@
-# Regester
+# About
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.5.
 Using basic  login Angular forms and bootstrap meathods
