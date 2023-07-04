@@ -1,0 +1,81 @@
+    <form class="border p-4 rounded-4" (ngSubmit)="onLogin()" [formGroup]="loginForm">
+    <div class="row g-0">
+        <div class="col text-center p-2 mb-3 bg-light">
+            <span class="fs-5">Register</span>
+        </div>
+    </div>
+    <!-- <div class="row">
+        <div class="col mb-3">
+            <label for="firstname" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstname" ng-model="firstname" required>
+            <div class="form-text text-danger">
+                First name is required.
+            </div> -->
+            <div class="col mb-3">
+                <label for="firstname" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstname" formControlName="firstname" required>
+                <div class="form-text text-danger" *ngIf="loginForm.controls['firstname'].invalid && loginForm.controls['firstname'].touched">
+                  First name is required and minimum of 6 digits
+                </div>
+              </div>
+        <div class="col mb-3">
+            <label for="lastname" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastname">
+        </div>
+    <div class="row">
+        <div class="col mb-3">
+            <label for="mobile" class="form-label">Mobile Number</label>
+            <input type="text" class="form-control" id="mobile" maxlength="10">
+            <div class="form-text"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mb-3">
+          <select class="custom-select">
+            <option selected>Developer (Role)</option>
+            <option *ngFor="let topic of topics">{{topic}}</option>
+          </select>
+        </div>
+      </div>
+     <div class="row">
+        <div class="col ps-3 mb-3">
+            <label class="form-label">Gender</label>
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" value="m" id="male">
+                <label class="form-check-label" for="male"> Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" value="f" id="female">
+                <label class="form-check-label" for="female">Female</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mb-3">
+            <label for="date" class="form-label">Date of Birth</label>
+            <input type="date" class="form-control" id="date">
+            <div class="form-text"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mb-3">
+             <label for="pwd" class="form-label">Password</label>
+            <input type="password" class="form-control" id="pwd"> 
+            <label for="exampleInputPassword1">Password</label>
+           <input type="password" class="form-control" formControlName="password" placeholder="Password">
+            <div class="form-text"></div>
+        </div>
+        <div class="col mb-3">
+            <label for="rpwd" class="form-label">Repeat Password</label>
+            <input type="password" class="form-control" id="rpwd">
+            <div class="form-text"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10 offset-5">
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</form> 
